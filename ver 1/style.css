@@ -1,0 +1,94 @@
+body {
+    
+    font-family: 'Raleway', sans-serif;
+    color:grey;
+    display: flex;
+    align-items: flex-start;
+}
+
+body * {
+    font-family: inherit;   
+}
+
+section {
+    padding:0 20px;
+}
+
+h1 {
+    margin-bottom:20px;
+    font-size: 20px;
+    color: crimson;
+    text-align: center;
+    width:100%;
+}
+
+#addCourse {
+    width:25%;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border:1px solid gainsboro;
+    align-items: center;
+}
+
+div.el, div.filter-el {
+    margin:0 10px;
+flex-grow: 1;
+}
+
+select {
+    width:95%;
+}
+
+label {
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+form input, select {
+    padding:10px 15px;
+    border: 1px solid gainsboro;
+    margin-bottom: 20px;
+}
+
+#submit {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;;
+}
+
+#FilterCourses {
+    display: flex;
+    flex-wrap: wrap;
+    margin:0 auto;
+    border:1px solid gainsboro;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+
+table {
+    width:100%;
+    margin:0 auto;
+    border:1px solid gainsboro;
+    margin-top:30px;
+    padding:30px;
+}
+
+td {
+    padding:10px;
+    font-size: 14px;
+    border-bottom: 1px solid gainsboro;
+}
+
+
+th {
+    text-align: left;
+    padding:10px;
+}
+
+

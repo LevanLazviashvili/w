@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+    <form id="addCourse">
+        <h1>Add Course</h1>
+        <div class="el">
+            <label for="">Course Name</label>
+            <br>
+            <input type="text" name="name" id="name">
+        </div>
+
+
+
+        <div class="el">
+            <label for="">School</label>
+            <br>
+            <select name="School" id="school">
+                <option value="medicine">Medicine</option>
+                <option value="business">Business</option>
+                <option value="law">Law</option>
+
+            </select>
+        </div>
+
+        <div class="el">
+            <label for="">Program</label>
+            <br>
+            <select name="Program" id="program">
+                <option value="medicine-doctor">Medicine Doctor</option>
+                <option value="business-bba">Business BBA</option>
+                <option value="business-mma">Business MA</option>
+                <option value="law-phd">Law PhD</option>
+                <option value="law-bachelors">Law Bachelors</option>
+
+            </select>
+        </div>
+        <div class="el">
+            <label for="">ECTs</label>
+            <br>
+            <input type="number" name="credits" id="credits">
+        </div>
+        <div class="el">
+            <label for="">Type</label>
+            <br>
+            <input type="radio" name="type" id="type1"> Core
+            <input type="radio" name="type" id="type2"> Elective
+        </div>
+        <div class="el">
+            <label for="">Status</label>
+            <br>
+            <input type="checkbox" name="isActive" id="isActive"> Active
+        </div>
+
+        <div id="submit">
+            <input type="submit" value="Add" id="addButton">
+
+        </div>
+
+    </form>
+
+    <section>
+
+        <form id="FilterCourses">
+            <h1>Filter Courses</h1>
+
+            <div class="filter-el">
+                <input type="text" name="name" id="" placeholder="Course Name">
+            </div>
+            <div class="filter-el">
+
+                <input type="radio" name="type" id=""> Core
+                <input type="radio" name="type" id=""> Elective
+            </div>
+            <div class="filter-el">
+                <select name="School" id="">
+                        <option value="">Choose School</option>
+                    <option value="medicine">Medicine</option>
+                    <option value="business">Business</option>
+                    <option value="law">Law</option>
+
+                </select>
+            </div>
+
+            <div class="filter-el">
+                <select name="Program" id="">
+                        <option value="">Choose Program</option>
+                    <option value="medicine-doctor">Medicine Doctor</option>
+                    <option value="business-bba">Business BBA</option>
+                    <option value="business-mma">Business MA</option>
+                    <option value="law-phd">Law PhD</option>
+                    <option value="law-bachelors">Law Bachelors</option>
+
+                </select>
+            </div>
+
+            <div class="filter-el">
+
+                <input type="checkbox" name="isActive" id=""> Active
+            </div>
+
+            <div class="filter-el">
+                <input type="submit" value="Filter" id="filterButton">
+
+            </div>
+        </form>
+        <br>
+
+        <div class="count">
+           <div>Core Courses: <span>5</span></div> 
+           <div>Elective Courses: <span>2</span></div> 
+        </div>
+
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>School</th>
+                <th>Program</th>
+                <th>Type</th>
+                <th>ECTs</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Introduction to Business</td>
+                <td>Business</td>
+                <td>Business BBA</td>
+                <td>Core</td>
+                <td>5</td>
+                <td>active</td>
+            </tr>
+            <tr>
+                <td>Introduction to Law</td>
+                <td>Law</td>
+                <td>Law Bachelors</td>
+                <td>Core</td>
+                <td>4</td>
+                <td>inactive</td>
+            </tr>
+            <tr>
+                <td>Criminal Law</td>
+                <td>Law</td>
+                <td>Law PhD</td>
+                <td>Elective</td>
+                <td>5</td>
+                <td>active</td>
+            </tr>
+            <tr>
+                <td>Hospitality Management</td>
+                <td>Business</td>
+                <td>Business MA</td>
+                <td>Core</td>
+                <td>8</td>
+                <td>active</td>
+            </tr>
+            <tr>
+                <td>Creativity In Business</td>
+                <td>Business</td>
+                <td>Business BBA</td>
+                <td>Elective</td>
+                <td>3</td>
+                <td>inactive</td>
+            </tr>
+
+            <tr>
+                <td>Corporate Law</td>
+                <td>Law</td>
+                <td>Law PhD</td>
+                <td>Core</td>
+                <td>6</td>
+                <td>active</td>
+            </tr>
+            <tr>
+                <td>Biology</td>
+                <td>Medicine</td>
+                <td>Medicine Doctor</td>
+                <td>Core</td>
+                <td>8</td>
+                <td>active</td>
+            </tr>
+        </table>
+
+    </section>
+
+
+
+
+    <script src="script.js" async defer></script>
+</body>
+
+</html>
