@@ -6,6 +6,8 @@ body {
     align-items: flex-start;
 }
 
+
+
 body * {
     font-family: inherit;   
 }
@@ -92,3 +94,6 @@ th {
 }
 
 
+.hidden {
+    display: none;   
+}

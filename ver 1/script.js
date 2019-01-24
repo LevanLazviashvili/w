@@ -8,9 +8,19 @@ class Course{
         isActive = isActive;
 
     }
+    Validate(){
+        console.log(this.name.length);
+        if (this.name.length >= 15){
+            alert('name should be less than than 15');
+            return false;
+        }
+    }
      Add(){
-        let tmpl = this.getFormTmpl();
-        document.getElementById('patientContainer').append(tmpl);
+         if (!this.Validate()){
+             return false;
+         }
+
+        
     }
 }
 
@@ -32,6 +42,37 @@ add.addEventListener('click', function(e){
     let isActive = document.querySelector('#isActive').checked;
 
     let course = new Course(name, school, program, credits, type, isActive);
+    course.Add();
 
     
 })
+
+
+document.getElementById('school').addEventListener('change', function(e) {
+    filterSelect(this.value);
+});
+
+function filterSelect(school){
+    console.log('.program[data-parent="'+school+'"]');
+    hideElements('.program');
+    unHideElements('.program[data-parent="'+school+'"]');
+}
+filterSelect('medicine');
+
+function hideElements (Query){
+    var x = document.querySelectorAll(Query);
+    var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].classList.add('hidden');
+        }
+}
+
+function unHideElements (Query){
+    var x = document.querySelectorAll(Query);
+    console.log(x);
+    var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].classList.remove('hidden');
+        }
+
+}
