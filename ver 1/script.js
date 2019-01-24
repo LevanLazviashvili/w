@@ -5,21 +5,35 @@ class Course{
         this.program = program;
         this.credits = credits;
         this.type = type;
-        isActive = isActive;
+        this.isActive = isActive;
 
     }
     Validate(){
-        console.log(this.name.length);
         if (this.name.length >= 15){
             alert('name should be less than than 15');
             return false;
         }
+        if (this.credits.length > 10){
+            alert('credits should be less than than 10');
+            return false;
+        }
+        return true;
     }
      Add(){
          if (!this.Validate()){
              return false;
          }
-
+         let tr = document.createElement('tr');
+         isActive = this.isActive ? 'active' : 'inactive';
+         let tmp = `
+         <td>${this.name}</td>
+         <td>${this.school}</td>
+         <td>${this.program}</td>
+         <td>${this.type}</td>
+         <td>${this.credits}</td>
+         <td>${isActive}</td>`;
+         tr.innerHTML = tmp;
+         document.getElementById('courseTable').append(tr);
         
     }
 }
@@ -53,9 +67,9 @@ document.getElementById('school').addEventListener('change', function(e) {
 });
 
 function filterSelect(school){
-    console.log('.program[data-parent="'+school+'"]');
     hideElements('.program');
     unHideElements('.program[data-parent="'+school+'"]');
+    document.querySelector('.program[data-parent="'+school+'"]').selected="selected";
 }
 filterSelect('medicine');
 
@@ -69,7 +83,6 @@ function hideElements (Query){
 
 function unHideElements (Query){
     var x = document.querySelectorAll(Query);
-    console.log(x);
     var i;
         for (i = 0; i < x.length; i++) {
             x[i].classList.remove('hidden');
