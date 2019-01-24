@@ -20,6 +20,7 @@ class Course{
         return true;
     }
      Add(){
+        updateCoursesStat(this.type);
          if (!this.Validate()){
              return false;
          }
@@ -56,7 +57,7 @@ class Course{
         if (isActive){
             query += '[data-isActive="active"]';
         }
-        console.log(query);
+        // console.log(query);
         unHideElements(query);
     }
 }
@@ -111,6 +112,16 @@ function unHideElements (Query){
             x[i].classList.remove('hidden');
         }
 
+}
+function updateCoursesStat(type){
+    if (type == 'core'){
+        let item = document.getElementById('core-courses').innerText;
+        document.getElementById('core-courses').innerText = parseInt(item) + 1;
+    }
+    if (type == 'elective'){
+        let item = document.getElementById('elective-courses').innerText;
+        document.getElementById('elective-courses').innerText = parseInt(item) + 1;
+    }
 }
 
 
