@@ -24,7 +24,7 @@ class Course{
              return false;
          }
          let tr = document.createElement('tr');
-         isActive = this.isActive ? 'active' : 'inactive';
+         let isActive = this.isActive ? 'active' : 'inactive';
          let tmp = `
          <td>${this.name}</td>
          <td>${this.school}</td>
