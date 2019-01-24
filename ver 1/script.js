@@ -26,15 +26,20 @@ class Course{
          let tr = document.createElement('tr');
          let isActive = this.isActive ? 'active' : 'inactive';
          let tmp = `
+         <tr class="course-item" data-name="${this.name}" data-school="${this.school}" data-program="${this.program}" data-type="${this.type}" data-credits="${this.credits}" data-isActive="${isActive}">
          <td>${this.name}</td>
          <td>${this.school}</td>
          <td>${this.program}</td>
          <td>${this.type}</td>
          <td>${this.credits}</td>
-         <td>${isActive}</td>`;
-         tr.innerHTML = tmp;
-         document.getElementById('courseTable').append(tr);
+         <td>${isActive}</td>
+         <tr>`;
+         document.getElementById('courseTable').innerHTML += tmp;
         
+    }
+
+    static Filter(name, school, program, credits, type, isActive){
+
     }
 }
 
@@ -89,3 +94,23 @@ function unHideElements (Query){
         }
 
 }
+
+
+document.getElementById('filterButton').addEventListener('click', function(e){
+    e.preventDefault();
+    let name = document.querySelector('#filtername').value;
+    let school = document.querySelector('#filterschool').value;
+    let program = document.querySelector('#filterprogram').value;
+    let credits = document.querySelector('#filtercredits').value;
+    let type = '';
+    if (document.querySelector('#filtertype1').checked){
+        type = 'core';
+    }
+    else if (document.querySelector('#filtertype2').checked){
+        type = 'elective';
+    }
+    let isActive = document.querySelector('#filterisActive').checked;
+
+
+    
+});
