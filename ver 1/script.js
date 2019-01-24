@@ -38,7 +38,7 @@ class Course{
         
     }
 
-    static Filter(name, school, program, credits, type, isActive){
+    static Filter(name, school, program, type, isActive){
         hideElements('.course-item');
         var query = '.course-item';
         if (name){
@@ -47,7 +47,17 @@ class Course{
         if (school){
             query += '[data-school="'+school+'"]';
         }
-        unHideElements('.course-item[data-name="'+name+'"]');
+        if (program){
+            query += '[data-program="'+program+'"]';
+        }
+        if (type){
+            query += '[data-type="'+type+'"]';
+        }
+        if (isActive){
+            query += '[data-isActive="active"]';
+        }
+        console.log(query);
+        unHideElements(query);
     }
 }
 
