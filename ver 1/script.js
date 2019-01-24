@@ -39,7 +39,15 @@ class Course{
     }
 
     static Filter(name, school, program, credits, type, isActive){
-
+        hideElements('.course-item');
+        var query = '.course-item';
+        if (name){
+            query += '[data-name="'+name+'"]';
+        }
+        if (school){
+            query += '[data-school="'+school+'"]';
+        }
+        unHideElements('.course-item[data-name="'+name+'"]');
     }
 }
 
@@ -101,7 +109,6 @@ document.getElementById('filterButton').addEventListener('click', function(e){
     let name = document.querySelector('#filtername').value;
     let school = document.querySelector('#filterschool').value;
     let program = document.querySelector('#filterprogram').value;
-    let credits = document.querySelector('#filtercredits').value;
     let type = '';
     if (document.querySelector('#filtertype1').checked){
         type = 'core';
@@ -110,6 +117,7 @@ document.getElementById('filterButton').addEventListener('click', function(e){
         type = 'elective';
     }
     let isActive = document.querySelector('#filterisActive').checked;
+    Course.Filter(name, school, program, type, isActive);
 
 
     
